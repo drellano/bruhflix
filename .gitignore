@@ -1,0 +1,7 @@
+#### ignore logs and db ###
+*.db
+*.log
+
+### ignore eclipse ###
+.pydevproject
+.project
