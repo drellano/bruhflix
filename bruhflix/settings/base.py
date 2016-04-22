@@ -38,6 +38,14 @@ TEMPLATES = [
 ]
 
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static/bruhflix'),
+]
+print STATICFILES_DIRS
+
+STATIC_ROOT = "static/"
+
+
 ALLOWED_HOSTS = ['*']
 
 PREREQ_APPS = [
@@ -52,7 +60,7 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     'streamingportal',
     'uploadconvert',
-    'bootstrap3'
+    'bootstrap3',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
