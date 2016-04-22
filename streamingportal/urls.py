@@ -1,5 +1,6 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+from views import browse
 
-urlpatterns = patterns('',
-    url(r'^$', view='browse', name='streamingportal.browse'),
-)
+urlpatterns = [
+               url(r'^$', browse, name="streamingportal.browse"),
+               ]

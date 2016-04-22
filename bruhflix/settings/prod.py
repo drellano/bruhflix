@@ -2,6 +2,6 @@ from base import *
 
 DEBUG = False
 
-TEMPLATE_DEBUG = False
+TEMPLATES[0]['debug'] = False
 
 

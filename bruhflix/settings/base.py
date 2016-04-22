@@ -1,30 +1,44 @@
-"""
-Django settings for bruhflix project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+
+ADMINS = [
+    ('David Arellano', 'arellanoda.andres@gmail.com'),
+]
+
+MANAGERS = ADMINS
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 SECRET_KEY = '3k^gjx(1%r0x+%yx!izffe&l)@5y$r7*x9zh+2uu7+_-pvj%50'
 
-TEMPLATE_DIRS = [
-    os.path.join(BASE_DIR, 'templates'),
-    os.path.join(BASE_DIR, 'streamingportal/templates'),
-    os.path.join(BASE_DIR, 'uploadconvert/templates'),
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'streamingportal/templates'),
+            os.path.join(BASE_DIR, 'uploadconvert/templates'),
+        ],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                # Insert your TEMPLATE_CONTEXT_PROCESSORS here or use this
+                # list if you haven't customized them:
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+            ],
+            'debug':
+                True,
+        },
+    },
 ]
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['*']
 
 PREREQ_APPS = [
     'django.contrib.admin',
@@ -38,6 +52,7 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     'streamingportal',
     'uploadconvert',
+    'bootstrap3'
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS

@@ -1,5 +1,6 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
+from views import upload
 
-urlpatterns = patterns('',
-    url(r'^$', view='upload', name='uploadconver.upload'),
-)
+urlpatterns = [
+               url(r'^$', upload, 'uploadconver.upload'),
+               ]

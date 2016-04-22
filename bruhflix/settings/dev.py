@@ -2,6 +2,6 @@ from base import *
 
 DEBUG = True
 
-TEMPLATE_DEBUG = True
+BROKER_URL = 'django://'
 
-
+INSTALLED_APPS += ['kombu.transport.django', ]
