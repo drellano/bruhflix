@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-print BASE_DIR
 
 
 # Quick-start development settings - unsuitable for production
@@ -19,25 +18,31 @@ print BASE_DIR
 
 SECRET_KEY = '3k^gjx(1%r0x+%yx!izffe&l)@5y$r7*x9zh+2uu7+_-pvj%50'
 
-DEBUG = True
-
-TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [
+    os.path.join(BASE_DIR, 'templates'),
+    os.path.join(BASE_DIR, 'streamingportal/templates'),
+    os.path.join(BASE_DIR, 'uploadconvert/templates'),
+]
 
 ALLOWED_HOSTS = []
 
-
-INSTALLED_APPS = (
+PREREQ_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
+
+PROJECT_APPS = [
     'streamingportal',
     'uploadconvert',
-)
+]
 
-MIDDLEWARE_CLASSES = (
+INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
+
+MIDDLEWARE_CLASSES = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -45,17 +50,16 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+]
 
 ROOT_URLCONF = 'bruhflix.urls'
 
 WSGI_APPLICATION = 'bruhflix.wsgi.application'
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db/bruhflix.db'),
+        'NAME': '/home/david/Documents/Software/Django/bruhflix/db/bruhflix.db',
     }
 }
 
