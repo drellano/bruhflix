@@ -30,6 +30,7 @@ TEMPLATES = [
                 'django.template.context_processors.static',
                 'django.template.context_processors.tz',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
             ],
             'debug':
                 True,
@@ -41,7 +42,6 @@ TEMPLATES = [
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/bruhflix'),
 ]
-print STATICFILES_DIRS
 
 STATIC_ROOT = "static/"
 
@@ -60,7 +60,7 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     'streamingportal',
     'uploadconvert',
-    'bootstrap3',
+#     'bootstrap3',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
@@ -99,3 +99,5 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+
+LOGIN_URL = 'home'

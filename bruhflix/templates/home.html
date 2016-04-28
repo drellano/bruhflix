@@ -1,21 +1,16 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% load bootstrap3 %}
-    {% bootstrap_css %}
-    {% bootstrap_javascript %}
-    {% bootstrap_messages %}
-    {% load staticfiles %}
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Bruhflix Login Page">
+    <meta name="author" content="David Arellano">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link href="{% static 'home.css' %}" rel="stylesheet">
-    <title>Home Page</title>
+    <title>Bruhflix Homepage</title>
 
   </head>
 
@@ -29,36 +24,50 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
+              <h3 class="masthead-brand">Bruhflix</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
+                  {% if user.is_authenticated %}
+                    <li class="active"><a href="/logout">Logout</a></li>
+                  {% else %}
+                    <li class="active"><a href="#">Login</a></li>
+                  {% endif %}
                   <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
             </div>
           </div>
-
           <div class="inner cover">
-            <h1 class="cover-heading">Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-            </div>
+            <form method="post" action="">
+              <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+              <fieldset class="form-group">
+                <label for="inputUsername" class="sr-only">Username</label>
+                <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" value="{{data.username}}" required autofocus>
+                {% if error %}
+                <div class="error">
+                  {{error}}
+                </div>
+                {% endif %}
+              </fieldset>
+              <fieldset class="form-group">
+                <label for="inputPassword" class="sr-only">Password</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" value="{{data.password}}" required>
+              </fieldset>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" name="remember"> Remember Me
+                  </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+            </form>
           </div>
 
         </div>
-
       </div>
-
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 
   </body>
 </html>

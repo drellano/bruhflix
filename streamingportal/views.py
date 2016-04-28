@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http.response import HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def browse(request):
-    return HttpResponse("Hello")
+    return render(request, template_name='browse.html')
