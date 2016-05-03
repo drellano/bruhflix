@@ -14,3 +14,4 @@ config/
 
 ## ignore pyc ##
 *.pyc
+secret_key.txt
