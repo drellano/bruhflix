@@ -8,6 +8,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="Bruhflix Login Page">
     <meta name="author" content="David Arellano">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link href="{% static 'home.css' %}" rel="stylesheet">
     <title>Bruhflix Homepage</title>
@@ -15,16 +16,14 @@
   </head>
 
   <body>
-
     <div class="site-wrapper">
-
       <div class="site-wrapper-inner">
-
+        <div class="banner"><img src="{% static 'bruhbanner.png' %}"/></div>
         <div class="cover-container">
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Bruhflix</h3>
+              <!--h3 class="masthead-brand">Bruhflix</h3-->
               <nav>
                 <ul class="nav masthead-nav">
                   {% if user.is_authenticated %}
@@ -32,7 +31,7 @@
                   {% else %}
                     <li class="active"><a href="#">Login</a></li>
                   {% endif %}
-                  <li><a href="#">Contact</a></li>
+                  <!--li><a href="#">Contact</a></li-->
                 </ul>
               </nav>
             </div>
@@ -66,6 +65,7 @@
       </div>
     </div>
 
+    <script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script><!-- Tether for Bootstrap --> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
 

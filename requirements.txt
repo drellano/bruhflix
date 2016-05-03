@@ -4,5 +4,8 @@ billiard==3.3.0.23
 celery==3.1.23
 Django==1.9.5
 django-bootstrap3==7.0.1
+django-cleanup==0.4.2
+-e git+http://github.com/ouhouhsami/django-progressbarupload.git@4d929bd364c77370bc7f5ec7ac6b4aa8aeb7190a#egg=django_progressbarupload
 kombu==3.0.35
 pytz==2016.4
+simplejson==3.8.2

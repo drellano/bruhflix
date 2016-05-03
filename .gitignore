@@ -5,3 +5,8 @@
 ### ignore eclipse ###
 .pydevproject
 .project
+.settings/
+
+## ignore media directory ##
+media/
+alec/

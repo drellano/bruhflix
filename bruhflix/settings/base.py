@@ -1,11 +1,11 @@
 import os
+from django.conf.global_settings import FILE_UPLOAD_HANDLERS, AUTH_USER_MODEL
 
 ADMINS = [
     ('David Arellano', 'arellanoda.andres@gmail.com'),
 ]
 
 MANAGERS = ADMINS
-
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 SECRET_KEY = '3k^gjx(1%r0x+%yx!izffe&l)@5y$r7*x9zh+2uu7+_-pvj%50'
@@ -41,7 +41,9 @@ TEMPLATES = [
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/bruhflix'),
+    '/home/david/Documents/Software/Django/bruhflix/static',
 ]
+
 
 STATIC_ROOT = "static/"
 
@@ -60,6 +62,8 @@ PREREQ_APPS = [
 PROJECT_APPS = [
     'streamingportal',
     'uploadconvert',
+    'progressbarupload',
+    'django_cleanup',
 #     'bootstrap3',
 ]
 
@@ -74,6 +78,11 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+FILE_UPLOAD_HANDLERS = [
+    "progressbarupload.uploadhandler.ProgressBarUploadHandler",
+    "django.core.files.uploadhandler.MemoryFileUploadHandler",
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler",]
 
 ROOT_URLCONF = 'bruhflix.urls'
 

@@ -48,6 +48,13 @@ body {
   display: table-cell;
   vertical-align: top;
 }
+
+.banner {
+  margin: auto;
+  top: 0px;
+  position: fixed;
+}
+
 .cover-container {
   margin-right: auto;
   margin-left: auto;
@@ -143,7 +150,7 @@ body {
   /* Pull out the header and footer */
   .masthead {
     position: fixed;
-    top: 0;
+    top: 100px;
   }
   .mastfoot {
     position: fixed;
