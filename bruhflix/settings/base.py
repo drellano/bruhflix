@@ -1,5 +1,4 @@
 import os
-from django.conf.global_settings import FILE_UPLOAD_HANDLERS, AUTH_USER_MODEL
 
 ADMINS = [
     ('David Arellano', 'beefy_admin@bruhflix.com'),
@@ -7,14 +6,15 @@ ADMINS = [
 
 MANAGERS = ADMINS
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+ROOT_DIR = os.path.abspath(os.path.join(BASE_DIR, os.pardir))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'streamingportal/templates'),
-            os.path.join(BASE_DIR, 'uploadconvert/templates'),
+            os.path.join(ROOT_DIR, 'streamingportal/templates'),
+            os.path.join(ROOT_DIR, 'uploadconvert/templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -39,6 +39,8 @@ TEMPLATES = [
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/bruhflix'),
+    os.path.join(ROOT_DIR, 'streamingportal/static/streamingportal'),
+    os.path.join(ROOT_DIR, 'uploadconvert/static/uploadconvert'),
 ]
 
 
