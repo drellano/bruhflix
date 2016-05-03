@@ -8,9 +8,6 @@ ADMINS = [
 MANAGERS = ADMINS
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-with open('/etc/secret_key.txt') as f:
-    SECRET_KEY = f.read().strip()
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
