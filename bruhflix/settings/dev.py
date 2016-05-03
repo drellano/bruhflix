@@ -1,5 +1,12 @@
 from base import *
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/home/david/Documents/Software/Django/bruhflix/db/bruhflix.db',
+    }
+}
+
 DEBUG = True
 
 BROKER_URL = 'django://'

@@ -41,7 +41,6 @@ TEMPLATES = [
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/bruhflix'),
-    '/home/david/Documents/Software/Django/bruhflix/static',
 ]
 
 
@@ -82,19 +81,12 @@ MIDDLEWARE_CLASSES = [
 FILE_UPLOAD_HANDLERS = [
     "progressbarupload.uploadhandler.ProgressBarUploadHandler",
     "django.core.files.uploadhandler.MemoryFileUploadHandler",
-    "django.core.files.uploadhandler.TemporaryFileUploadHandler",]
+    "django.core.files.uploadhandler.TemporaryFileUploadHandler",
+]
 
 ROOT_URLCONF = 'bruhflix.urls'
 
 WSGI_APPLICATION = 'bruhflix.wsgi.application'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/david/Documents/Software/Django/bruhflix/db/bruhflix.db',
-    }
-}
-
 
 LANGUAGE_CODE = 'en-us'
 
