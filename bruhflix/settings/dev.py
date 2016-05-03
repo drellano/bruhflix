@@ -3,13 +3,6 @@ from base import *
 with open(os.path.join(ROOT_DIR, 'secret_key.txt')) as f:
     SECRET_KEY = f.read().strip()
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(ROOT_DIR, 'db/bruhflix.db'),
-    }
-}
-
 DEBUG = True
 
 BROKER_URL = 'django://'
