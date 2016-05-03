@@ -13,7 +13,7 @@ MEDIA_ROOT = os.path.join(ROOT_DIR, 'media')
 
 MEDIA_URL = 'media/'
 
-STATIC_ROOT = ''
+STATIC_ROOT = os.path.join(ROOT_DIR, 'static')
 
 TEMP_DIR = os.path.abspath(os.path.join(ROOT_DIR, os.pardir))
 FILE_UPLOAD_TEMP_DIR = os.path.join(TEMP_DIR, 'temp')

@@ -45,15 +45,11 @@ TEMPLATES = [
     },
 ]
 
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/bruhflix'),
     os.path.join(ROOT_DIR, 'streamingportal/static/streamingportal'),
     os.path.join(ROOT_DIR, 'uploadconvert/static/uploadconvert'),
 ]
-
-
-STATIC_ROOT = "static/"
 
 
 ALLOWED_HOSTS = ['*']
