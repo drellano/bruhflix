@@ -8,7 +8,8 @@ ADMINS = [
 MANAGERS = ADMINS
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-SECRET_KEY = '3k^gjx(1%r0x+%yx!izffe&l)@5y$r7*x9zh+2uu7+_-pvj%50'
+with open('/etc/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
 
 TEMPLATES = [
     {
