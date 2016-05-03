@@ -2,7 +2,7 @@ import os
 from django.conf.global_settings import FILE_UPLOAD_HANDLERS, AUTH_USER_MODEL
 
 ADMINS = [
-    ('David Arellano', 'arellanoda.andres@gmail.com'),
+    ('David Arellano', 'beefy_admin@bruhflix.com'),
 ]
 
 MANAGERS = ADMINS
