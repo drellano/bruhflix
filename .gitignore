@@ -21,3 +21,6 @@ src/
 
 ## ignore windows ##
 *.lnk
+
+## ignore gitignore ##
+.gitignore
