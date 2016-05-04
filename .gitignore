@@ -15,3 +15,9 @@ config/
 ## ignore pyc ##
 *.pyc
 secret_key.txt
+
+## ignore terrible pip package #3
+src/
+
+## ignore windows ##
+*.lnk
